@@ -1,10 +1,9 @@
-import { useState } from 'react';
 import Formulario from './componentes/Formulario';
 import Listado from './componentes/Listado';
 import './App.css';
 
 function App() {
-  const [citas, setCitas] = useState([
+  const citas = [
     {
       id: 1,
       mascota: 'Nina',
@@ -21,7 +20,7 @@ function App() {
       hora: '09:24',
       sintomas: 'Duerme mucho'
     },
-    {
+    { 
       id: 3,
       mascota: 'Floki',
       dueño: 'Ari',
@@ -29,7 +28,7 @@ function App() {
       hora: '16:15',
       sintomas: 'No está comiendo'
     }
-  ]);
+  ];
 
   return (
     <>
