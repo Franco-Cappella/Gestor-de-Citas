@@ -8,7 +8,6 @@ const Listado = ({ citas }) => {
       <div className="lista-citas">
         {citas.map(cita => (
           <Cita 
-            key={cita.id} 
             cita={cita} 
           />
         ))}

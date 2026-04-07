@@ -5,7 +5,6 @@ import './App.css';
 function App() {
   const citas = [
     {
-      id: 1,
       mascota: 'Nina',
       dueño: 'Martin',
       fecha: '2021-08-05',
@@ -13,7 +12,6 @@ function App() {
       sintomas: 'Le duele la pierna'
     },
     {
-      id: 2,
       mascota: 'Sifon',
       dueño: 'Flecha',
       fecha: '2023-08-05',
@@ -21,7 +19,6 @@ function App() {
       sintomas: 'Duerme mucho'
     },
     { 
-      id: 3,
       mascota: 'Floki',
       dueño: 'Ari',
       fecha: '2023-08-05',
