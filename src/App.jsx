@@ -3,7 +3,12 @@ import Listado from './componentes/Listado';
 import './App.css';
 
 function App() {
-  const citas = [
+
+
+
+
+
+  const [citas, setCitas] = useState([
     {
       mascota: 'Nina',
       dueño: 'Martin',
@@ -18,26 +23,34 @@ function App() {
       hora: '09:24',
       sintomas: 'Duerme mucho'
     },
-    { 
+    {
       mascota: 'Floki',
       dueño: 'Ari',
       fecha: '2023-08-05',
       hora: '16:15',
       sintomas: 'No está comiendo'
     }
-  ];
+  ]);
+  const crearCita = (citaNueva) => {
+       setCitas([
+      ...citas,  
+      citaNueva
+    ])
+  }
+
+
 
   return (
     <>
       <h1>ADMINISTRADOR DE PACIENTES</h1>
-      
+
       <div className="container">
         <div className="row">
           <div className="one-half column">
-            <Formulario />
+            <Formulario crearCita={crearCita} />
           </div>
           <div className="one-half column">
-            <Listado citas={citas} />
+            <Listado crearCita={crearCita} />
           </div>
         </div>
       </div>

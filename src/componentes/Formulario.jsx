@@ -1,10 +1,24 @@
+
 import InputTextPlaceholder from './InputTextPlaceholder';
 import InputDate from './InputDate';
 import InputTime from './InputTime';
 import InputTextSinPH from './InputTextSinPH';
 import './Formulario.css';
+import { useState } from 'react';
+const Formulario = ({crearCita}) => {
+  
+   const [cita, setCita] = useState({
+    mascota: '',
+    dueño: '',
+    fecha: '',
+    hora: '',
+    sintomas: ''
+  });
 
-const Formulario = () => {
+   
+
+
+
   return (
     <>
       <h2>Crear mi Cita</h2>
@@ -36,14 +50,20 @@ const Formulario = () => {
           name="sintomas" 
         />
 
-        <button 
-          type="submit" 
+       <button 
+          type="button" 
           className="u-full-width button-primary"
-        >
-          Agregar Cita
-        </button>
+          onClick={() => {
+ 
+            crearCita(cita);}}>agregar cita</button>
+
+
       </form>
     </>
+
+
+
+
   );
 };
 
