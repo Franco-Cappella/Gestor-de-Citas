@@ -1,23 +1,33 @@
-
 import InputTextPlaceholder from './InputTextPlaceholder';
 import InputDate from './InputDate';
 import InputTime from './InputTime';
 import InputTextSinPH from './InputTextSinPH';
 import './Formulario.css';
 import { useState } from 'react';
+
 const Formulario = ({crearCita}) => {
   
-   const [cita, setCita] = useState({
-    mascota: '',
-    dueño: '',
-    fecha: '',
-    hora: '',
-    sintomas: ''
-  });
+  const [mascota, setMascota] = useState('');
+  const [dueño, setDueño] = useState('');
+  const [fecha, setFecha] = useState('');
+  const [hora, setHora] = useState('');
+  const [sintomas, setSintomas] = useState('');
 
-   
-
-
+  const agregarConClick = () => {
+    const nuevaCita = {
+      mascota: mascota,
+      dueño: dueño,
+      fecha: fecha,
+      hora: hora,
+      sintomas: sintomas
+    };
+    crearCita(nuevaCita);
+    setMascota('');
+    setDueño('');
+    setFecha('');
+    setHora('');
+    setSintomas('');
+  };
 
   return (
     <>
@@ -25,45 +35,44 @@ const Formulario = ({crearCita}) => {
       <form>
         <InputTextPlaceholder 
           label="Nombre Mascota" 
-          name="mascota" 
-          placeholder="Nombre Mascota" 
+          placeholder="Nombre Mascota"
+          valor={mascota}
+          cambio={(e) => setMascota(e.target.value)}
         />
         
         <InputTextPlaceholder 
           label="Nombre Dueño" 
-          name="propietario" 
-          placeholder="Nombre dueño de la mascota" 
+          placeholder="Nombre dueño de la mascota"
+          valor={dueño}
+          cambio={(e) => setDueño(e.target.value)}
         />
         
         <InputDate 
-          label="Fecha" 
-          name="fecha" 
+          label="Fecha"
+          valor={fecha}
+          cambio={(e) => setFecha(e.target.value)}
         />
         
         <InputTime 
-          label="Hora" 
-          name="hora" 
+          label="Hora"
+          valor={hora}
+          cambio={(e) => setHora(e.target.value)}
         />
         
         <InputTextSinPH 
-          label="Síntomas" 
-          name="sintomas" 
+          label="Síntomas"
+          valor={sintomas}
+          cambio={(e) => setSintomas(e.target.value)}
         />
 
-       <button 
+        <button 
           type="button" 
           className="u-full-width button-primary"
-          onClick={() => {
- 
-            crearCita(cita);}}>agregar cita</button>
-
-
+          onClick={agregarConClick}>
+          agregar cita
+        </button>
       </form>
     </>
-
-
-
-
   );
 };
 

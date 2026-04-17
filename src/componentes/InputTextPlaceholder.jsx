@@ -1,17 +1,18 @@
-import './InputTextPlaceholder.css';
+  import './Formulario.css';
 
-const InputTextPlaceholder = ({ label, name, placeholder }) => {
-  return (
-    <>
-      <label>{label}</label>
-      <input 
-        type="text" 
-        name={name} 
-        className="u-full-width" 
-        placeholder={placeholder} 
-      />
-    </>
-  );
-};
+  function InputTextPlaceholder({ label, placeholder, valor, cambio }) {
+    return (
+      <div>
+        <label>{label}</label>
+        <input 
+          type="text" 
+          className="u-full-width"
+          placeholder={placeholder}
+          value={valor}
+          onChange={cambio}
+        />
+      </div>
+    );
+  }
 
-export default InputTextPlaceholder;
+  export default InputTextPlaceholder;

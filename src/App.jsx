@@ -1,3 +1,6 @@
+
+
+import { useState } from 'react';
 import Formulario from './componentes/Formulario';
 import Listado from './componentes/Listado';
 import './App.css';
@@ -50,7 +53,7 @@ function App() {
             <Formulario crearCita={crearCita} />
           </div>
           <div className="one-half column">
-            <Listado crearCita={crearCita} />
+         <Listado citas={citas} setCitas={setCitas} />
           </div>
         </div>
       </div>

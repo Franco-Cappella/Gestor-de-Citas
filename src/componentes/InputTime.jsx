@@ -1,16 +1,17 @@
-import './InputTime.css';
+import './Formulario.css';
 
-const InputTime = ({ label, name }) => {
+function InputTime({ label, valor, cambio }) {
   return (
-    <>
+    <div>
       <label>{label}</label>
       <input 
         type="time" 
-        name={name} 
-        className="u-full-width" 
+        className="u-full-width"
+        value={valor}
+        onChange={cambio}
       />
-    </>
+    </div>
   );
-};
+}
 
 export default InputTime;

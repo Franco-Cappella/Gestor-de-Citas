@@ -1,15 +1,16 @@
-import './InputTextSinPH.css';
+import './Formulario.css';
 
-const InputTextSinPH = ({ label, name }) => {
+function InputTextSinPH({ label, valor, cambio }) {
   return (
-    <>
+    <div>
       <label>{label}</label>
       <textarea 
-        name={name} 
         className="u-full-width"
+        value={valor}
+        onChange={cambio}
       ></textarea>
-    </>
+    </div>
   );
-};
+}
 
 export default InputTextSinPH;
